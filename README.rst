@@ -17,3 +17,7 @@ Add permissions per field instead of per model::
         model = Harddisk
     
     admin.site.register(Harddisk, HarddiskAdmin)
+
+or::
+
+    admin.site.register(Harddisk, fgp.enforce(Harddisk, admin.ModelAdmin))
