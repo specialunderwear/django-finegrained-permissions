@@ -1,0 +1,10 @@
+docs/_build
+locale
+*.pyc
+*.pyo
+example/finegrained-permissions.sqlite
+.svn/
+.ropeproject
+pip-log.txt
+MANIFEST
+dist
