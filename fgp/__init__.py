@@ -53,15 +53,17 @@ class enforce(object):
         elif issubclass(model_or_admin, BaseModelAdmin):
             if hasattr(model_or_admin, 'model'):
                 obj.model = model_or_admin.model
-                cls = model_or_admin
+                admin_class = model_or_admin
             else:
                 raise(AttributeError("%s is neither a model nor a ModelAdmin" % model_or_admin.__name__))
         else:
             raise TypeError("enforce can not accept parameters of type %s" % model_or_admin.__name__)
             
         if cls:                    
-            descendant = type(obj.model.__name__ + cls.__name__, (cls,), attrs or {'model':obj.model})
-            return obj.__call__(descendant)
+            admin_class = type(obj.model.__name__ + cls.__name__, (cls,), attrs or {'model':obj.model})
+        
+        if admin_class:
+            return obj.__call__(admin_class)
             
         return obj
         
