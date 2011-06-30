@@ -55,7 +55,7 @@ class enforce(object):
                 obj.model = model_or_admin.model
                 admin_class = model_or_admin
             else:
-                raise(AttributeError("%s is neither a model nor a ModelAdmin" % model_or_admin.__name__))
+                raise(AttributeError("%s must have the 'model' attribute defined: model = SomeModel" % model_or_admin.__name__))
         else:
             raise TypeError("enforce can not accept parameters of type %s" % model_or_admin.__name__)
             
