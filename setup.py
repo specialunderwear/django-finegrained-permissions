@@ -4,7 +4,7 @@ import re
 from distutils.core import setup
 from distutils.command.install import INSTALL_SCHEMES
 
-description="""Add permissions per field instead of per model::
+__doc__="""Add permissions per field instead of per model::
 
     from django.db import models
     from django.contrib import admin
@@ -41,7 +41,7 @@ setup(name='django-finegrained-permissions',
     maintainer='L. van de Kerkhof',
     maintainer_email='fgp@permanentmarkers.nl',
     keywords='django model permission finegrained field',
-    long_description=description,
+    long_description=__doc__,
     url='https://github.com/specialunderwear/django-finegrained-permissions',
     packages=['fgp'],
     platforms = "any",
