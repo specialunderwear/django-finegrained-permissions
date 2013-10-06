@@ -24,3 +24,8 @@ or::
     admin.site.register(Harddisk, fgp.enforce(Harddisk, admin.ModelAdmin))
 
 Note that you need to set ``model`` even when the admin class is not an inline admin.
+
+To add permissions to admin settings execute::
+
+    ./manage.py syncdb --all
+
